@@ -1,0 +1,51 @@
+﻿@model OrderViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form enctype="multipart/form-data" asp-controller="Home" asp-action="OrderImport" method="post">
+    <h1 class="display-4">Import Orders</h1>
+    <p>
+        <input type="file" class="form-control-file" name="importFile" >
+        <br/>
+        <button type="submit">Import</button>
+    </p>
+
+    @if (!string.IsNullOrWhiteSpace(Model.OrderImportFileError))
+    {
+        <div style="color: red">
+            @Model.OrderImportFileError
+        </div>
+    }
+
+    <p>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Quantity</th>
+                    <th>Size</th>
+                    <th>Date Required</th>
+                    <th>Notes</th>
+                    <th>Errors</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model.Orders)
+                {
+                    <tr style="@(order.ValidOrder ? "color:green" : "color:red")">
+                        <td>@order.CustomerName</td>
+                        <td>@order.CustomerEmail</td>
+                        <td>@order.Quantity</td>
+                        <td>@order.Size</td>
+                        <td>@order.DateRequired</td>
+                        <td>@order.Notes</td>
+                        <td>@order.Errors</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </p>
+</form>

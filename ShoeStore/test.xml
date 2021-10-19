@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<BigShoeDataImport>
+	<Order 
+		CustomerName = "1"
+		CustomerEmail = "test@test.com"
+		Quantity = "2000"
+		Notes = "This is a test note"
+		Size = "11.5"
+		DateRequired = "2021-11-04"/>
+	<Order 
+		CustomerName = "2"
+		CustomerEmail = "test2@test2.com"
+		Quantity = "4000"
+		Notes = "This is a test note"
+		Size = "15"
+		DateRequired = "2021-10-06"/>
+  <Order
+		CustomerName = "3"
+		CustomerEmail = "test3@test3.com"
+		Quantity = "1234"
+		Notes = "This is a test note"
+		Size = "6"
+		DateRequired = "2021-10-06"/>
+  <Order
+		CustomerName = "4"
+		CustomerEmail = "test4@test4.com"
+		Quantity = "1000"
+		Notes = "This is a test note"
+		Size = "14.5"
+		DateRequired = "2021-10-31"/>
+
+</BigShoeDataImport>
